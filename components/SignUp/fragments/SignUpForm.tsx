@@ -283,10 +283,24 @@ const SignUpForm: FC = () => {
 								value={formik?.values?.password}
 							/>
 						</motion.div>
-						<ReCAPTCHA
+						{/* ReCAPTCHA */}
+						<motion.div
+							initial={initial}
+							whileInView={fadeInUp}
+							viewport={{once: true}}
+							className={
+								formik?.touched?.firstName ||
+								formik?.touched?.password ||
+								formik?.touched?.email
+									? "block"
+									: "hidden"
+							}
+						>
+							<ReCAPTCHA
 							sitekey={`6LeJJqwlAAAAAByEDQJTbNFkPL9DSjMBwnE7smkU`}
 							onChange={handleReCaptchaChange}
-						/>
+							/>
+						</motion.div>
 					</motion.div>
 					<motion.button
 						role="button"

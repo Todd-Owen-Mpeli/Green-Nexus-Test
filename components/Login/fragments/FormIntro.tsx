@@ -5,7 +5,7 @@ import { ISignUp } from "@/components/SignUp/types/Index";
 import {initial, stagger, fadeInUp} from "@/animations/animations";
 
 // Styling
-import styles from "@/components/SignUp/styles/SignUp.module.scss";
+import styles from "@/components/Login/styles/Login.module.scss";
 
 // Components
 import Paragraph from "@/components/Elements/Paragraph/Index";

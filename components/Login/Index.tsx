@@ -3,23 +3,23 @@
 import {FC} from "react";
 import Link from "next/link";
 import {motion} from "framer-motion";
-import { ISignUp } from "@/components/SignUp/types/Index";
+import { ILogin } from "@/components/Login/types/Index";
 import {stagger, initial, fadeInUp} from "@/animations/animations";
 
 // Styling
-import styles from "@/components/SignUp/styles/SignUp.module.scss";
+import styles from "@/components/Login/styles/Login.module.scss";
 
 // Components
-import FormIntro from "@/components/SignUp/fragments/FormIntro";
-import SignInAuth from "@/components/SignUp/fragments/SignInAuth";
-import SignUpForm from "@/components/SignUp/fragments/SignUpForm";
-import SignInDivider from "@/components/SignUp/fragments/SignInDivider";
+import FormIntro from "@/components/Login/fragments/FormIntro";
+import SignInAuth from "@/components/Login/fragments/SignInAuth";
+// import LoginForm from "@/components/Login/fragments/LoginForm";
+import SignInDivider from "@/components/Login/fragments/SignInDivider";
 
-const SignUp: FC<ISignUp.IProps> = ({title, paragraph}) => {
+const Login: FC<ILogin.IProps> = ({title, paragraph}) => {
     return (
-        <section className={styles.signUp}
+        <section className={styles.login}
             style={{
-				backgroundImage: `url("/svg/backgroundSVG/stacked-waves-haikei-orange-yellow.svg")`,
+				backgroundImage: `url("/svg/backgroundSVG/stacked-waves-haikei-blue-darkblue.svg")`,
 			}}
 		>
             <div className={styles.container}>
@@ -33,7 +33,7 @@ const SignUp: FC<ISignUp.IProps> = ({title, paragraph}) => {
                     <FormIntro title={title} paragraph={paragraph} />
                     <SignInAuth />
                     <SignInDivider />
-					<SignUpForm />
+					{/* <LoginForm /> */}
                     <motion.div
 						initial={initial}
 						viewport={{once: true}}
@@ -41,13 +41,13 @@ const SignUp: FC<ISignUp.IProps> = ({title, paragraph}) => {
 						className={styles.bottomText}
 					>
 						<p className={styles.paragraph}>
-							Already have an account?
+							Don&apos;t have an account?
 							<Link
-								href={`/login`}
+								href={`/`}
 								rel="noopener noreferrer"
 								className={styles.link}
 							>
-								Sign In here
+								Sign up here
 							</Link>
 						</p>
 					</motion.div>
@@ -57,4 +57,4 @@ const SignUp: FC<ISignUp.IProps> = ({title, paragraph}) => {
     );
 }
 
-export default SignUp;
+export default Login;
