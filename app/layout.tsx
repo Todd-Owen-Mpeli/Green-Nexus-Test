@@ -4,12 +4,8 @@ import type {AppProps} from "next/app";
 // Global Styling
 import "@/styles/globals.scss";
 
-// Firebase
-import initializeFirebase from "@/firebase/firebase";
-
-
 // Context Providers
-import FirebaseContextProvider from "@/context/providers/FirebaseContextProvider";
+import FirebaseUserProvider from "@/context/providers/FirebaseContextProvider";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,16 +14,11 @@ export const metadata: Metadata = {
 
 const App = async ({children}: AppProps | any) => {
 
-  // FIREBASE //
-	// Initializing Firebase
-  initializeFirebase();
   
   return (
     <html lang="en">
       <body >
-        {/* <FirebaseContextProvider> */}
-          {children}
-        {/* </FirebaseContextProvider> */}
+          <FirebaseUserProvider>{children}</FirebaseUserProvider>
       </body>
     </html>
   );

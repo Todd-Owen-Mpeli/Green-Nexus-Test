@@ -99,7 +99,7 @@
                                 @apply flex items-center justify-start gap-2;
 
                                 .label {
-                                    @apply block text-tiny text-darkBlue;
+                                    @apply block text-tiny text-primary-dark;
                                 }
 
                                 .error {
@@ -108,7 +108,7 @@
                             }
 
                             .field {
-                                @apply w-full px-3 py-2 border-[1px] rounded-md border-grey text-darkBlue focus:border-darkBlue;
+                                @apply w-full px-3 py-2 border-[1px] rounded-md border-grey text-primary-dark focus:border-primary-dark;
                             }
                         }
 
@@ -119,7 +119,7 @@
                                 @apply flex items-center justify-start gap-2;
 
                                 .label {
-                                    @apply block text-tiny text-darkBlue;
+                                    @apply block text-tiny text-primary-dark;
                                 }
 
                                 .errorWrapper {
@@ -146,7 +146,7 @@
                             }
 
                             .field {
-                                @apply w-full px-3 py-2 border-[1px] rounded-md border-grey text-darkBlue focus:border-darkBlue;
+                                @apply w-full px-3 py-2 border-[1px] rounded-md border-grey text-primary-dark focus:border-primary-dark;
                             }
                         }
 
@@ -160,7 +160,7 @@
                                     @apply flex items-center justify-start gap-2;
 
                                     .label {
-                                        @apply block text-tiny text-darkBlue;
+                                        @apply block text-tiny text-primary-dark;
                                     }
 
                                     .errorWrapper {
@@ -174,21 +174,21 @@
                                 }
 
                                 .link {
-                                    @apply text-xs focus:underline text-darkBlue hover:text-blue hover:underline;
+                                    @apply text-xs focus:underline text-primary-dark hover:text-primary-default hover:underline;
                                 }
                             }
 
                             .field {
-                                @apply w-full px-3 py-2 border-[1px] rounded-md border-grey text-darkBlue focus:border-darkBlue;
+                                @apply w-full px-3 py-2 border-[1px] rounded-md border-grey text-primary-dark focus:border-primary-dark;
                             }
                         }
                     }
 
                     .button {
-                        @apply relative flex items-center justify-center w-full px-4 py-2 space-x-4 overflow-hidden text-white transition duration-200 bg-center bg-no-repeat bg-cover rounded-md disabled:bg-opacity-20 disabled:cursor-not-allowed border-primary-dark group focus:ring-2 focus:ring-offset-1 hover:text-white hover:border-white focus:ring-white;
+                        @apply relative flex items-center justify-center w-full px-4 py-2 space-x-4 overflow-hidden text-white transition duration-200 bg-center bg-no-repeat bg-cover rounded-md disabled:bg-opacity-20 disabled:cursor-not-allowed border-primary-dark focus:ring-2 focus:ring-offset-1 hover:text-white hover:border-white focus:ring-white;
 
                         .div {
-                            @apply absolute top-0 w-full h-full transition duration-200 transform bg-center bg-no-repeat bg-cover bg-primary-dark right-full group-hover:translate-x-full group-hover:scale-102;
+                            @apply absolute top-0 w-full h-full transition duration-200 transform bg-center bg-no-repeat bg-cover bg-primary-dark right-full;
                         }
 
                         .span {

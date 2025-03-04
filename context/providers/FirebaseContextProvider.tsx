@@ -1,46 +1,69 @@
+// firebase/FirebaseUserProvider.tsx
 "use client";
 
-// Imports
-import {
-	IFirebaseContext,
-	IFirebaseContextProvider,
-} from "@/firebase/types/Index";
-import {FC, useState} from "react";
+import { useEffect, useState } from "react";
+import { initializeFirebase } from "@/firebase/firebase";
+import { getAuth, onAuthStateChanged, User } from "firebase/auth";
+import { FirebaseContext } from "@/context/Firebase";
+import { IFirebaseContext, IFirebaseUser } from "@/firebase/types/Index";
 
-// Firebase
-import {Auth, getAuth} from "firebase/auth";
-import {FirebaseContext} from "@/context/Firebase";
-import {IFirebaseUser} from "@/firebase/types/Index";
-import {getUserDocument} from "@/firebase/backend/getUserDocument";
-import {getUserItemsDocument} from "@/firebase/backend/getUserItemsDocument";
+const FirebaseUserProvider = ({ children }: { children: React.ReactNode }) => {
+  const [firebaseUserUser, setFirebaseUserUser] = useState<IFirebaseContext>({
+    userData: null,
+    userDocId: null,
+    signedInUser: false,
+  });
+    const [firebaseInitialized, setFirebaseInitialized] = useState(false);
 
-const DashboardContextProvider: FC<IFirebaseContextProvider> = ({children}) => {
-	// Retrieving Firebase User Details
-	const auth: Auth = getAuth();
-	const [signedInUser, setSignedInUser] = useState(false);
-	const [userData, setUserData] = useState<IFirebaseUser | null>(null);
-	const [userDocId, setUserDocId] = useState<string | null>(null);
-	const [itemsCollection, setItemsCollection] = useState<any[] | null>(null);
-	const [mediaFilesCollection, setMediaFilesCollection] = useState<
-		any[] | null
-	>(null);
-	const firebaseUser: IFirebaseContext = {
-		userData: userData,
-		userDocId: userDocId,
-		signedInUser: signedInUser,
-	};
+  useEffect(() => {
+    initializeFirebase();
+    const { auth } = initializeFirebase();
+    setFirebaseInitialized(true);
 
-	return (
-		<FirebaseContext.Provider
-			value={{
-				userData: firebaseUser?.userData,
-				userDocId: firebaseUser?.userDocId,
-				signedInUser: firebaseUser?.signedInUser,
-			}}
-		>
-			{children}
-		</FirebaseContext.Provider>
-	);
+    const unsubscribe = onAuthStateChanged(auth, (user: User | null) => {
+      if (user) {
+        const userData: IFirebaseUser = {
+            uid: user.uid,
+            email: user.email || "",
+            displayName: user.displayName || "",
+            photoURL: user.photoURL || "",
+            providerId: user.providerData[0]?.providerId || "",
+            phoneNumber: user.phoneNumber || "",
+            metadata: {
+                creationTime: user.metadata.creationTime,
+                lastSignInTime: user.metadata.lastSignInTime,
+            },
+            accessToken: "",
+            emailVerified: user.emailVerified
+        };
+        setFirebaseUserUser({
+          userData: userData,
+          userDocId: userData.uid,
+          signedInUser: true,
+        });
+      } else {
+        setFirebaseUserUser({
+          userData: null,
+          userDocId: null,
+          signedInUser: false,
+        });
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
+
+  return (
+    <FirebaseContext.Provider
+      value={{
+        userData: firebaseUserUser?.userData,
+        userDocId: firebaseUserUser?.userDocId,
+        signedInUser: firebaseUserUser?.signedInUser,
+      }}
+    >
+      {firebaseInitialized ? children : <div>Loading...</div>}
+    </FirebaseContext.Provider>
+  );
 };
 
-export default DashboardContextProvider;
+export default FirebaseUserProvider;

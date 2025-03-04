@@ -7,7 +7,6 @@ export type IFirebaseContext = {
 export type IFirebaseContextProvider = {
 	children: React.ReactNode;
 };
-
 // Firebase
 export type IFirebaseUser = {
 	uid: string;
@@ -19,8 +18,8 @@ export type IFirebaseUser = {
 	accessToken: string;
 	emailVerified: boolean;
 	metadata: {
-		creationTime: string;
-		lastSignInTime: string;
+		creationTime: string | undefined;
+		lastSignInTime: string | undefined;
 	};
 };
 export type IFirebaseConfig = {

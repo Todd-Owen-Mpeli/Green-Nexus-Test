@@ -1,7 +1,6 @@
-@use "../styles/base/fonts";
-@use "../styles/base/colors";
-
-@import "tailwindcss/preflight";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 body {
 	@apply p-0 m-0 bg-pureBlack;

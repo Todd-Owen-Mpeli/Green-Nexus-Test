@@ -1,9 +1,7 @@
 // Imports
 import {FC} from "react";
 import Link from "next/link";
-import {motion} from "framer-motion";
 import { ISignUp } from "@/components/SignUp/types/Index";
-import { initial, stagger, fadeInUp } from "@/animations/animations";
 
 // Styling
 import styles from "@/components/SignUp/styles/SignUp.module.scss";
@@ -23,20 +21,12 @@ const SignUp: FC<ISignUp.IProps> = ({title, paragraph}) => {
 		>
             <div className={styles.container}>
                 <div className={styles.wrapper}>
-                    {/* <motion.div
-                        initial={initial}
-                        viewport={{once: true}}
-                        whileInView={stagger}
-						className={styles.card}
-                    >
+                    <div className={styles.card}>
                         <FormIntro title={title} paragraph={paragraph} />
                         <SignInAuth />
                         <SignInDivider />
 						<SignUpForm />
-                        <motion.div
-							initial={initial}
-							whileInView={fadeInUp}
-							viewport={{once: true}}
+                        <div
 							className={styles.bottomText}
 						>
 							<p className={styles.paragraph}>
@@ -49,8 +39,8 @@ const SignUp: FC<ISignUp.IProps> = ({title, paragraph}) => {
 									Sign In here
 								</Link>
 							</p>
-						</motion.div>
-                    </motion.div> */}
+						</div>
+                    </div>
                 </div>
             </div>
         </section>

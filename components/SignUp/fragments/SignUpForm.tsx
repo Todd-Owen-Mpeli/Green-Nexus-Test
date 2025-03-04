@@ -142,20 +142,9 @@ const SignUpForm: FC = () => {
 	return (
 		<Formik onSubmit={formik?.onSubmit} initialValues={formik?.initialValues}>
 			<Form className={styles.signUpForm}>
-				<motion.div
-					initial={initial}
-					viewport={{once: true}}
-					variants={stagger}
-					whileInView="animate"
-					className={styles.content}
-				>
+				<div className={styles.content}>
 					{/* First Name */}
-					<motion.div
-						initial={initial}
-						whileInView={fadeInUp}
-						viewport={{once: true}}
-						className={styles.firstNameField}
-					>
+					<div className={styles.firstNameField}>
 						<div className={styles.div}>
 							<label
 								htmlFor="First Name"
@@ -179,14 +168,9 @@ const SignUpForm: FC = () => {
 							onChange={formik?.handleChange}
 							value={formik?.values?.fullName}
 						/>
-					</motion.div>
+					</div>
 					{/* Email address */}
-					<motion.div
-						initial={initial}
-						whileInView={fadeInUp}
-						viewport={{once: true}}
-						className={styles.emailAddressField}
-					>
+					<div className={styles.emailAddressField}>
 						<div className={styles.div}>
 							<label
 								htmlFor="email"
@@ -230,14 +214,9 @@ const SignUpForm: FC = () => {
 							onChange={formik?.handleChange}
 							placeholder="oliviaanderson@gmail.com"
 						/>
-					</motion.div>
+					</div>
 					{/* Password */}
-					<motion.div
-						initial={initial}
-						whileInView={fadeInUp}
-						viewport={{once: true}}
-						className={styles.field}
-					>
+					<div className={styles.field}>
 						<div className={styles.div}>
 							<span className={styles.span}>
 								<label
@@ -281,19 +260,16 @@ const SignUpForm: FC = () => {
 							onChange={formik?.handleChange}
 							value={formik?.values?.password}
 						/>
-					</motion.div>
+					</div>
 					<ReCAPTCHA
 						sitekey={`6LeJJqwlAAAAAByEDQJTbNFkPL9DSjMBwnE7smkU`}
 						onChange={handleReCaptchaChange}
 					/>
-				</motion.div>
-				<motion.button
+				</div>
+				<button
 					role="button"
 					type="button"
-					initial={initial}
-					whileInView={fadeInUp}
 					onClick={onFormSubmit}
-					viewport={{once: true}}
 					className={styles.button}
 					aria-label="Sign Up with Form"
 					disabled={
@@ -304,17 +280,17 @@ const SignUpForm: FC = () => {
 						reCaptchaResult === undefined
 					}
 					style={{
-						backgroundImage: `url("/svg/backgroundSVG/stacked-waves-haikei-blue-darkblue.svg")`,
+						backgroundImage: `url("/svg/backgroundSVG/stacked-waves-haikei-primary-default-primary-dark.svg")`,
 					}}
 				>
 					<div
-						className={styles.div}
+						className={styles.div + " group group-hover:translate-x-full group-hover:scale-102"}
 						style={{
 							backgroundImage: `url("/svg/backgroundSVG/stacked-waves-haikei-orange-yellow.svg")`,
 						}}
 					/>
 					<span className={styles.span}>Sign up</span>
-				</motion.button>
+				</button>
 			</Form>
 		</Formik>
 	);

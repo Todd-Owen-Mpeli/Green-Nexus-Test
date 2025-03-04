@@ -6,7 +6,7 @@ import {
 	getFirestore,
 	CollectionReference,
 } from "firebase/firestore";
-import {INewCreatedItem} from "@/types/firebase";
+import {INewCreatedItem} from "@/firebase/types/Index";
 
 /* Collect Users google account Details 
 and send it to the cloud Firestore Database */

@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import {PluginAPI, CSSRuleObject} from "tailwindcss/types/config";
 
 export default {
   content: [
@@ -84,36 +85,39 @@ export default {
     },
   },
   plugins: [
-    function ({ addUtilities }: any) {
-      addUtilities({
-        ".font-schaboCondensed": {
-          fontFamily: '"schaboCondensed"',
-        },
-        ".font-OnestBlack": {
-          fontFamily: '"OnestBlack"',
-        },
-        ".font-OnestBold": {
-          fontFamily: '"OnestBold"',
-        },
-        ".font-OnestRegular": {
-          fontFamily: '"OnestRegular"',
-        },
-        ".font-BGAPBold": {
-          fontFamily: '"BGAPBold"',
-        },
-        ".font-BGAPBlack": {
-          fontFamily: '"BGAPBlack"',
-        },
-        ".font-BGAPLight": {
-          fontFamily: '"BGAPLight"',
-        },
-        ".font-BGAPMedium": {
-          fontFamily: '"BGAPMedium"',
-        },
-        ".font-BGAPRegular": {
-          fontFamily: '"BGAPRegular"',
-        },
-      });
-    },
-  ],
+		function ({addUtilities}: PluginAPI) {
+			addUtilities({
+				// SchaboCondensed
+				".font-schaboCondensed": {
+					fontFamily: '"schaboCondensed"',
+				},
+				// Onest
+				".font-OnestBlack": {
+					fontFamily: '"OnestBlack"',
+				},
+				".font-OnestBold": {
+					fontFamily: '"OnestBold"',
+				},
+				".font-OnestRegular": {
+					fontFamily: '"OnestRegular"',
+				},
+				// BGAP
+				".font-BGAPBold": {
+					fontFamily: '"BGAPBold"',
+				},
+				".font-BGAPBlack": {
+					fontFamily: '"BGAPBlack"',
+				},
+				".font-BGAPLight": {
+					fontFamily: '"BGAPLight"',
+				},
+				".font-BGAPMedium": {
+					fontFamily: '"BGAPMedium"',
+				},
+				".font-BGAPRegular": {
+					fontFamily: '"BGAPRegular"',
+				},
+			} as CSSRuleObject);
+		},
+	],
 } satisfies Config;
