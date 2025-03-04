@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import type {AppProps} from "next/app";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
 
+// Global Styling
+import "@/styles/globals.scss";
 
 // Firebase
 import initializeFirebase from "@/firebase/firebase";
@@ -10,16 +10,6 @@ import initializeFirebase from "@/firebase/firebase";
 
 // Context Providers
 import FirebaseContextProvider from "@/context/providers/FirebaseContextProvider";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -34,9 +24,7 @@ const App = async ({children}: AppProps | any) => {
   
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body >
         {/* <FirebaseContextProvider> */}
           {children}
         {/* </FirebaseContextProvider> */}

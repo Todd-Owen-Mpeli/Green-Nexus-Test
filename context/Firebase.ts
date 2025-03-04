@@ -1,6 +1,6 @@
 // Imports
 import {createContext, useContext} from "react";
-import {IFirebaseContext} from "@/types/context/Providers";
+import {IFirebaseContext} from "@/firebase/types/Index";
 
 export const FirebaseContext = createContext<IFirebaseContext | undefined>(
 	undefined

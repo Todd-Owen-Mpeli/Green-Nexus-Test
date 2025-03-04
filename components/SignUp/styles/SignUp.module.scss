@@ -1,8 +1,214 @@
-// Imports
-.aboutChannel {
-    @apply bg-white;
+.signUp {
+    @apply min-h-screen w-full h-full bg-pureBlack bg-center bg-no-repeat bg-cover;
 
     .container {
-        @apply w-full;
+        @apply w-full max-w-[1700px] flex flex-col items-center justify-center min-h-screen px-4 py-10 mx-auto overflow-hidden;
+
+        .wrapper {
+            @apply relative px-0;
+
+            .card {
+                @apply max-w-md px-10 mx-auto bg-white py-14 rounded-xl;
+
+                .formIntro {
+                    @apply relative px-0;
+
+                    .title {
+                        @apply mb-4 text-lg font-semibold text-primary-dark;
+                    }
+
+                    .paragraph {
+                        @apply mb-4 text-base text-pureBlack;
+                    }
+                }
+
+                .signInSignUp {
+                    @apply flex items-center gap-4 my-6 -mx-2;
+
+                    .google {
+                        .span {
+                            @apply flex items-center justify-center w-12 h-12;
+                        }
+
+                        &:hover {
+                            path:nth-child(1) {
+                                @apply fill-secondary-default;
+                            }
+                            path:nth-child(2) {
+                                @apply fill-secondary-default;
+                            }
+                            path:nth-child(3) {
+                                @apply fill-secondary-default;
+                            }
+                            path:nth-child(4) {
+                                @apply fill-secondary-default;
+                            }
+                        }
+                    }
+
+                    .facebook {
+                        .svg {
+                            @apply relative w-8 h-8 fill-current;
+                        }
+
+                        &:hover {
+                            path:nth-child(1) {
+                                @apply fill-secondary-default;
+                            }
+                            path:nth-child(2) {
+                                @apply fill-white;
+                            }
+                        }
+                    }
+
+                    .apple {
+                        .span {
+                            @apply flex items-center justify-center w-12 h-12;
+                        }
+
+                        &:hover {
+                            path {
+                                @apply fill-secondary-default;
+                            }
+                        }
+                    }
+                }
+
+                .signInDivider {
+                    @apply flex items-center mb-6;
+
+                    .dividers {
+                        @apply w-full h-px bg-darkGrey;
+                    }
+
+                    .text {
+                        @apply mx-4 text-sm text-black;
+                    }
+                }
+
+                .signUpForm {
+                    @apply space-y-8;
+
+                    .content {
+                        @apply w-full h-px bg-darkGrey;
+
+                        .firstNameField {
+                            @apply space-y-2;
+
+                            .div {
+                                @apply flex items-center justify-start gap-2;
+
+                                .label {
+                                    @apply block text-tiny text-darkBlue;
+                                }
+
+                                .error {
+                                    @apply py-0 text-sm font-semibold text-left text-pinkRed;
+                                }
+                            }
+
+                            .field {
+                                @apply w-full px-3 py-2 border-[1px] rounded-md border-grey text-darkBlue focus:border-darkBlue;
+                            }
+                        }
+
+                        .emailAddressField {
+                            @apply space-y-2;
+
+                            .div {
+                                @apply flex items-center justify-start gap-2;
+
+                                .label {
+                                    @apply block text-tiny text-darkBlue;
+                                }
+
+                                .errorWrapper {
+                                    @apply flex items-center;
+
+                                    .error,
+                                    .invalid,
+                                    .valid {
+                                        @apply py-0 text-sm font-semibold text-left;
+                                    }
+
+                                    .error {
+                                        @apply text-pinkRed;
+                                    }
+
+                                    .invalid {
+                                        @apply text-pinkRed;
+                                    }
+
+                                    .valid {
+                                        @apply text-brightGreen;
+                                    }
+                                }
+                            }
+
+                            .field {
+                                @apply w-full px-3 py-2 border-[1px] rounded-md border-grey text-darkBlue focus:border-darkBlue;
+                            }
+                        }
+
+                        .passwordField {
+                            @apply space-y-2;
+
+                            .div {
+                                @apply flex items-center justify-between;
+
+                                .span {
+                                    @apply flex items-center justify-start gap-2;
+
+                                    .label {
+                                        @apply block text-tiny text-darkBlue;
+                                    }
+
+                                    .errorWrapper {
+                                        @apply flex items-center;
+
+                                        .error,
+                                        .errorPasswordMessage {
+                                            @apply py-0 text-sm font-semibold text-left text-pinkRed;
+                                        }
+                                    }
+                                }
+
+                                .link {
+                                    @apply text-xs focus:underline text-darkBlue hover:text-blue hover:underline;
+                                }
+                            }
+
+                            .field {
+                                @apply w-full px-3 py-2 border-[1px] rounded-md border-grey text-darkBlue focus:border-darkBlue;
+                            }
+                        }
+                    }
+
+                    .button {
+                        @apply relative flex items-center justify-center w-full px-4 py-2 space-x-4 overflow-hidden text-white transition duration-200 bg-center bg-no-repeat bg-cover rounded-md disabled:bg-opacity-20 disabled:cursor-not-allowed border-primary-dark group focus:ring-2 focus:ring-offset-1 hover:text-white hover:border-white focus:ring-white;
+
+                        .div {
+                            @apply absolute top-0 w-full h-full transition duration-200 transform bg-center bg-no-repeat bg-cover bg-primary-dark right-full group-hover:translate-x-full group-hover:scale-102;
+                        }
+
+                        .span {
+                            @apply relative text-base;
+                        }
+                    }
+                }
+
+                .bottomText {
+                    @apply mt-4;
+
+                    .paragraph {
+                        @apply text-sm text-center dark:text-grey;
+
+                        .link {
+                            @apply ml-1 focus:underline text-primary-dark hover:text-primary-default hover:underline;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
