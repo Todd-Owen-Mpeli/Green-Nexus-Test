@@ -1,7 +1,10 @@
-// Imports
+"use client";
+
 import {FC} from "react";
 import Link from "next/link";
+import {motion} from "framer-motion";
 import { ISignUp } from "@/components/SignUp/types/Index";
+import {stagger, initial, fadeInUp} from "@/animations/animations";
 
 // Styling
 import styles from "@/components/SignUp/styles/SignUp.module.scss";
@@ -16,32 +19,39 @@ const SignUp: FC<ISignUp.IProps> = ({title, paragraph}) => {
     return (
         <section className={styles.signUp}
             style={{
-				backgroundImage: `url("/svg/backgroundSVG/stacked-waves-haikei-blue-pink-red-yellow.svg")`,
+				backgroundImage: `url("/svg/backgroundSVG/stacked-waves-haikei-orange-yellow.svg")`,
 			}}
 		>
             <div className={styles.container}>
-                <div className={styles.wrapper}>
-                    <div className={styles.card}>
-                        <FormIntro title={title} paragraph={paragraph} />
-                        <SignInAuth />
-                        <SignInDivider />
-						<SignUpForm />
-                        <div
-							className={styles.bottomText}
-						>
-							<p className={styles.paragraph}>
-								Already have an account?
-								<Link
-									href={`/sign-in`}
-									rel="noopener noreferrer"
-									className={styles.link}
-								>
-									Sign In here
-								</Link>
-							</p>
-						</div>
-                    </div>
-                </div>
+                <motion.div
+					initial={initial}
+					variants={stagger}
+					whileInView="animate"
+					className={styles.card}
+					viewport={{ once: true }}
+				>
+                    <FormIntro title={title} paragraph={paragraph} />
+                    <SignInAuth />
+                    <SignInDivider />
+					<SignUpForm />
+                    <motion.div
+						initial={initial}
+						viewport={{once: true}}
+						whileInView={fadeInUp}
+						className={styles.bottomText}
+					>
+						<p className={styles.paragraph}>
+							Already have an account?
+							<Link
+								href={`/sign-in`}
+								rel="noopener noreferrer"
+								className={styles.link}
+							>
+								Sign In here
+							</Link>
+						</p>
+					</motion.div>
+                </motion.div>
             </div>
         </section>
     );

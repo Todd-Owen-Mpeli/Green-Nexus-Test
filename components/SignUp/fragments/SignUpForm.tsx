@@ -140,159 +140,185 @@ const SignUpForm: FC = () => {
 	};
 
 	return (
-		<Formik onSubmit={formik?.onSubmit} initialValues={formik?.initialValues}>
-			<Form className={styles.signUpForm}>
-				<div className={styles.content}>
-					{/* First Name */}
-					<div className={styles.firstNameField}>
-						<div className={styles.div}>
-							<label
-								htmlFor="First Name"
-								className={styles.label}
-							>
-								First Name
-							</label>
-							{formik?.touched?.fullName && formik?.errors?.fullName ? (
-								<span className={styles.error}>
-									{formik?.errors?.fullName}
-								</span>
-							) : null}
-						</div>
-						<Field
-							type="text"
-							id="fullName"
-							name="fullName"
-							className={styles.field}
-							onBlur={formik?.handleBlur}
-							placeholder="Olivia Anderson"
-							onChange={formik?.handleChange}
-							value={formik?.values?.fullName}
-						/>
-					</div>
-					{/* Email address */}
-					<div className={styles.emailAddressField}>
-						<div className={styles.div}>
-							<label
-								htmlFor="email"
-								className={styles.label}
-							>
-								Email address
-							</label>
-							<div className={styles.errorWrapper}>
-								{formik?.touched?.email && formik?.errors?.email ? (
-									<span className={styles.error}>
-										{formik?.errors?.email}
-									</span>
-								) : null}
-								<span
-									className={
-										errorEmailMessage
-											? styles.invalid
-											: "hidden"
-									}
-								>
-									Invalid email address
-								</span>
-								<span
-									className={
-										errorEmailExistsMessage
-											? styles.valid
-											: "hidden"
-									}
-								>
-									Valid email address
-								</span>
-							</div>
-						</div>
-						<Field
-							id="email"
-							type="email"
-							name="email"
-							className={styles.field}
-							onBlur={formik?.handleBlur}
-							value={formik?.values?.email}
-							onChange={formik?.handleChange}
-							placeholder="oliviaanderson@gmail.com"
-						/>
-					</div>
-					{/* Password */}
-					<div className={styles.field}>
-						<div className={styles.div}>
-							<span className={styles.span}>
+		<div className={styles.signUpForm}>
+			<Formik  onSubmit={formik?.onSubmit} initialValues={formik?.initialValues}>
+				<Form>
+					<motion.div
+						initial={initial}
+						viewport={{once: true}}
+						variants={stagger}
+						whileInView="animate"
+						className={styles.content}
+					>
+						{/* First Name */}
+						<motion.div
+							initial={initial}
+							whileInView={fadeInUp}
+							viewport={{once: true}}
+							className={styles.firstNameField}
+						>
+							<div className={styles.div}>
 								<label
-									htmlFor="Password"
+									htmlFor="First Name"
 									className={styles.label}
 								>
-									Password
+									First Name
+								</label>
+								{formik?.touched?.fullName && formik?.errors?.fullName ? (
+									<span className={styles.error}>
+										{formik?.errors?.fullName}
+									</span>
+								) : null}
+							</div>
+							<Field
+								type="text"
+								id="fullName"
+								name="fullName"
+								className={styles.field}
+								onBlur={formik?.handleBlur}
+								placeholder="Olivia Anderson"
+								onChange={formik?.handleChange}
+								value={formik?.values?.fullName}
+							/>
+						</motion.div>
+						{/* Email address */}
+						<motion.div
+							initial={initial}
+							whileInView={fadeInUp}
+							viewport={{once: true}}
+							className={styles.emailAddressField}
+						>
+							<div className={styles.div}>
+								<label
+									htmlFor="email"
+									className={styles.label}
+								>
+									Email address
 								</label>
 								<div className={styles.errorWrapper}>
-									{formik?.touched?.password && formik?.errors?.password ? (
+									{formik?.touched?.email && formik?.errors?.email ? (
 										<span className={styles.error}>
-											{formik?.errors?.password}
+											{formik?.errors?.email}
 										</span>
 									) : null}
 									<span
 										className={
-											errorPasswordMessage
-												? styles.errorPasswordMessage
+											errorEmailMessage
+												? styles.invalid
 												: "hidden"
 										}
 									>
-										Invalid Password
+										Invalid email address
+									</span>
+									<span
+										className={
+											errorEmailExistsMessage
+												? styles.valid
+												: "hidden"
+										}
+									>
+										Valid email address
 									</span>
 								</div>
-							</span>
-							<Link
-								href="#"
-								className={styles.link}
-								rel="noopener noreferrer"
-							>
-								Forgot password?
-							</Link>
-						</div>
-						<Field
-							id="password"
-							type="password"
-							name="password"
-							placeholder="**********"
-							className={styles.field}
-							onBlur={formik?.handleBlur}
-							onChange={formik?.handleChange}
-							value={formik?.values?.password}
+							</div>
+							<Field
+								id="email"
+								type="email"
+								name="email"
+								className={styles.field}
+								onBlur={formik?.handleBlur}
+								value={formik?.values?.email}
+								onChange={formik?.handleChange}
+								placeholder="oliviaanderson@gmail.com"
+							/>
+						</motion.div>
+						{/* Password */}
+						<motion.div
+							initial={initial}
+							whileInView={fadeInUp}
+							viewport={{once: true}}
+							className={styles.passwordField}
+						>
+							<div className={styles.div}>
+								<span className={styles.span}>
+									<label
+										htmlFor="Password"
+										className={styles.label}
+									>
+										Password
+									</label>
+									<div className={styles.errorWrapper}>
+										{formik?.touched?.password && formik?.errors?.password ? (
+											<span className={styles.error}>
+												{formik?.errors?.password}
+											</span>
+										) : null}
+										<span
+											className={
+												errorPasswordMessage
+													? styles.errorPasswordMessage
+													: "hidden"
+											}
+										>
+											Invalid Password
+										</span>
+									</div>
+								</span>
+								<Link
+									href="#"
+									className={styles.link}
+									rel="noopener noreferrer"
+								>
+									Forgot password?
+								</Link>
+							</div>
+							<Field
+								id="password"
+								type="password"
+								name="password"
+								placeholder="**********"
+								className={styles.field}
+								onBlur={formik?.handleBlur}
+								onChange={formik?.handleChange}
+								value={formik?.values?.password}
+							/>
+						</motion.div>
+						<ReCAPTCHA
+							sitekey={`6LeJJqwlAAAAAByEDQJTbNFkPL9DSjMBwnE7smkU`}
+							onChange={handleReCaptchaChange}
 						/>
-					</div>
-					<ReCAPTCHA
-						sitekey={`6LeJJqwlAAAAAByEDQJTbNFkPL9DSjMBwnE7smkU`}
-						onChange={handleReCaptchaChange}
-					/>
-				</div>
-				<button
-					role="button"
-					type="button"
-					onClick={onFormSubmit}
-					className={styles.button}
-					aria-label="Sign Up with Form"
-					disabled={
-						!formik?.values?.fullName ||
-						!formik?.values?.email ||
-						!formik?.values?.password ||
-						reCaptchaResult === null ||
-						reCaptchaResult === undefined
-					}
-					style={{
-						backgroundImage: `url("/svg/backgroundSVG/stacked-waves-haikei-primary-default-primary-dark.svg")`,
-					}}
-				>
-					<div
-						className={styles.div + " group group-hover:translate-x-full group-hover:scale-102"}
+					</motion.div>
+					<motion.button
+						role="button"
+						type="button"
+						initial={initial}
+						whileInView={fadeInUp}
+						onClick={onFormSubmit}
+						viewport={{once: true}}
+						aria-label="Sign Up with Form"
+						disabled={
+							!formik?.values?.fullName ||
+							!formik?.values?.email ||
+							!formik?.values?.password ||
+							reCaptchaResult === null ||
+							reCaptchaResult === undefined
+						}
+						className={styles.button + " group"}
 						style={{
-							backgroundImage: `url("/svg/backgroundSVG/stacked-waves-haikei-orange-yellow.svg")`,
+							backgroundImage: `url("/svg/backgroundSVG/stacked-waves-haikei-blue-darkblue.svg")`,
 						}}
-					/>
-					<span className={styles.span}>Sign up</span>
-				</button>
-			</Form>
-		</Formik>
+					>
+						<div
+							className={styles.div + " group-hover:translate-x-full group-hover:scale-102"}
+							style={{
+								backgroundImage: `url("/svg/backgroundSVG/stacked-waves-haikei-orange-yellow.svg")`,
+							}}
+						/>
+						<span className={styles.span}>Sign up</span>
+					</motion.button>
+				</Form>
+			</Formik>
+		</div>
 	);
 };
 

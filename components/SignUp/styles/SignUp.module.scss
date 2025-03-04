@@ -1,211 +1,207 @@
 .signUp {
-    @apply min-h-screen w-full h-full bg-pureBlack bg-center bg-no-repeat bg-cover;
+    @apply min-h-screen w-full h-full bg-pureBlack bg-center bg-no-repeat bg-cover  flex flex-col items-center justify-center;
 
     .container {
         @apply w-full max-w-[1700px] flex flex-col items-center justify-center min-h-screen px-4 py-10 mx-auto overflow-hidden;
 
-        .wrapper {
-            @apply relative px-0;
+        .card {
+            @apply max-w-md w-full h-full px-10 mx-auto bg-white py-14 rounded-xl;
 
-            .card {
-                @apply max-w-md px-10 mx-auto bg-white py-14 rounded-xl;
+            .formIntro {
+                @apply relative px-0;
 
-                .formIntro {
-                    @apply relative px-0;
-
-                    .title {
-                        @apply mb-4 text-lg font-semibold text-primary-dark;
-                    }
-
-                    .paragraph {
-                        @apply mb-4 text-base text-pureBlack;
-                    }
+                .title {
+                    @apply mb-4 text-lg lg:text-xl font-semibold text-primary-dark font-OnestBold;
                 }
 
-                .signInSignUp {
-                    @apply flex items-center gap-4 my-6 -mx-2;
+                .paragraph {
+                    @apply mb-4 text-base text-pureBlack font-OnestRegular;
+                }
+            }
 
-                    .google {
-                        .span {
-                            @apply flex items-center justify-center w-12 h-12;
-                        }
+            .signInSignUp {
+                @apply flex items-center gap-4 my-6 -mx-2;
 
-                        &:hover {
-                            path:nth-child(1) {
-                                @apply fill-secondary-default;
-                            }
-                            path:nth-child(2) {
-                                @apply fill-secondary-default;
-                            }
-                            path:nth-child(3) {
-                                @apply fill-secondary-default;
-                            }
-                            path:nth-child(4) {
-                                @apply fill-secondary-default;
-                            }
-                        }
+                .google {
+                    .span {
+                        @apply flex items-center justify-center w-12 h-12;
                     }
 
-                    .facebook {
-                        .svg {
-                            @apply relative w-8 h-8 fill-current;
+                    &:hover {
+                        path:nth-child(1) {
+                            @apply fill-secondary-default;
                         }
-
-                        &:hover {
-                            path:nth-child(1) {
-                                @apply fill-secondary-default;
-                            }
-                            path:nth-child(2) {
-                                @apply fill-white;
-                            }
+                        path:nth-child(2) {
+                            @apply fill-secondary-default;
                         }
-                    }
-
-                    .apple {
-                        .span {
-                            @apply flex items-center justify-center w-12 h-12;
+                        path:nth-child(3) {
+                            @apply fill-secondary-default;
                         }
-
-                        &:hover {
-                            path {
-                                @apply fill-secondary-default;
-                            }
+                        path:nth-child(4) {
+                            @apply fill-secondary-default;
                         }
                     }
                 }
 
-                .signInDivider {
-                    @apply flex items-center mb-6;
-
-                    .dividers {
-                        @apply w-full h-px bg-darkGrey;
+                .facebook {
+                    .svg {
+                        @apply relative w-8 h-8 fill-current;
                     }
 
-                    .text {
-                        @apply mx-4 text-sm text-black;
+                    &:hover {
+                        path:nth-child(1) {
+                            @apply fill-secondary-default;
+                        }
+                        path:nth-child(2) {
+                            @apply fill-white;
+                        }
                     }
                 }
 
-                .signUpForm {
-                    @apply space-y-8;
+                .apple {
+                    .span {
+                        @apply flex items-center justify-center w-12 h-12;
+                    }
 
-                    .content {
-                        @apply w-full h-px bg-darkGrey;
+                    &:hover {
+                        path {
+                            @apply fill-secondary-default;
+                        }
+                    }
+                }
+            }
 
-                        .firstNameField {
-                            @apply space-y-2;
+            .signInDivider {
+                @apply flex items-center mb-6;
 
-                            .div {
-                                @apply flex items-center justify-start gap-2;
+                .dividers {
+                    @apply w-full h-px bg-darkGrey;
+                }
 
-                                .label {
-                                    @apply block text-tiny text-primary-dark;
+                .text {
+                    @apply mx-4 text-sm text-black font-OnestRegular;
+                }
+            }
+
+            .signUpForm {
+                @apply space-y-8;
+
+                .content {
+                    @apply space-y-4;
+
+                    .firstNameField {
+                        @apply space-y-2;
+
+                        .div {
+                            @apply flex items-center justify-start gap-2;
+
+                            .label {
+                                @apply block text-tiny text-primary-dark font-OnestBold;
+                            }
+
+                            .error {
+                                @apply py-0 text-sm font-semibold text-left text-pinkRed;
+                            }
+                        }
+
+                        .field {
+                            @apply w-full px-3 py-2 border-[1px] rounded-md border-grey text-primary-dark focus:border-primary-dark font-OnestRegular;
+                        }
+                    }
+
+                    .emailAddressField {
+                        @apply space-y-2;
+
+                        .div {
+                            @apply flex items-center justify-start gap-2;
+
+                            .label {
+                                @apply block text-tiny text-primary-dark font-OnestBold;
+                            }
+
+                            .errorWrapper {
+                                @apply flex items-center;
+
+                                .error,
+                                .invalid,
+                                .valid {
+                                    @apply py-0 text-sm font-semibold text-left;
                                 }
 
                                 .error {
-                                    @apply py-0 text-sm font-semibold text-left text-pinkRed;
+                                    @apply text-pinkRed;
                                 }
-                            }
 
-                            .field {
-                                @apply w-full px-3 py-2 border-[1px] rounded-md border-grey text-primary-dark focus:border-primary-dark;
+                                .invalid {
+                                    @apply text-pinkRed;
+                                }
+
+                                .valid {
+                                    @apply text-brightGreen;
+                                }
                             }
                         }
 
-                        .emailAddressField {
-                            @apply space-y-2;
+                        .field {
+                            @apply w-full px-3 py-2 border-[1px] rounded-md border-grey text-primary-dark focus:border-primary-dark font-OnestRegular;
+                        }
+                    }
 
-                            .div {
+                    .passwordField {
+                        @apply space-y-2;
+
+                        .div {
+                            @apply flex items-center justify-between;
+
+                            .span {
                                 @apply flex items-center justify-start gap-2;
 
                                 .label {
-                                    @apply block text-tiny text-primary-dark;
+                                    @apply block text-tiny text-primary-dark font-OnestBold;
                                 }
 
                                 .errorWrapper {
                                     @apply flex items-center;
 
                                     .error,
-                                    .invalid,
-                                    .valid {
-                                        @apply py-0 text-sm font-semibold text-left;
-                                    }
-
-                                    .error {
-                                        @apply text-pinkRed;
-                                    }
-
-                                    .invalid {
-                                        @apply text-pinkRed;
-                                    }
-
-                                    .valid {
-                                        @apply text-brightGreen;
+                                    .errorPasswordMessage {
+                                        @apply py-0 text-sm font-semibold text-left text-pinkRed font-OnestBold;
                                     }
                                 }
                             }
 
-                            .field {
-                                @apply w-full px-3 py-2 border-[1px] rounded-md border-grey text-primary-dark focus:border-primary-dark;
+                            .link {
+                                @apply text-xs focus:underline text-primary-dark hover:text-primary-default hover:underline font-OnestRegular;
                             }
                         }
 
-                        .passwordField {
-                            @apply space-y-2;
-
-                            .div {
-                                @apply flex items-center justify-between;
-
-                                .span {
-                                    @apply flex items-center justify-start gap-2;
-
-                                    .label {
-                                        @apply block text-tiny text-primary-dark;
-                                    }
-
-                                    .errorWrapper {
-                                        @apply flex items-center;
-
-                                        .error,
-                                        .errorPasswordMessage {
-                                            @apply py-0 text-sm font-semibold text-left text-pinkRed;
-                                        }
-                                    }
-                                }
-
-                                .link {
-                                    @apply text-xs focus:underline text-primary-dark hover:text-primary-default hover:underline;
-                                }
-                            }
-
-                            .field {
-                                @apply w-full px-3 py-2 border-[1px] rounded-md border-grey text-primary-dark focus:border-primary-dark;
-                            }
-                        }
-                    }
-
-                    .button {
-                        @apply relative flex items-center justify-center w-full px-4 py-2 space-x-4 overflow-hidden text-white transition duration-200 bg-center bg-no-repeat bg-cover rounded-md disabled:bg-opacity-20 disabled:cursor-not-allowed border-primary-dark focus:ring-2 focus:ring-offset-1 hover:text-white hover:border-white focus:ring-white;
-
-                        .div {
-                            @apply absolute top-0 w-full h-full transition duration-200 transform bg-center bg-no-repeat bg-cover bg-primary-dark right-full;
-                        }
-
-                        .span {
-                            @apply relative text-base;
+                        .field {
+                            @apply w-full px-3 py-2 border-[1px] rounded-md border-grey text-primary-dark focus:border-primary-dark font-OnestRegular;
                         }
                     }
                 }
 
-                .bottomText {
-                    @apply mt-4;
+                .button {
+                    @apply relative flex items-center justify-center w-full mt-6 px-4 py-2 space-x-4 overflow-hidden text-white transition duration-200 bg-center bg-no-repeat bg-cover rounded-md disabled:bg-opacity-20 disabled:cursor-not-allowed border-primary-dark focus:ring-2 focus:ring-offset-1 hover:text-white hover:border-white focus:ring-white;
 
-                    .paragraph {
-                        @apply text-sm text-center dark:text-grey;
+                    .div {
+                        @apply absolute top-0 w-full h-full transition duration-200 transform bg-center bg-no-repeat bg-cover bg-primary-dark right-full;
+                    }
 
-                        .link {
-                            @apply ml-1 focus:underline text-primary-dark hover:text-primary-default hover:underline;
-                        }
+                    .span {
+                        @apply relative text-base font-OnestBold;
+                    }
+                }
+            }
+
+            .bottomText {
+                @apply mt-4;
+
+                .paragraph {
+                    @apply text-sm text-center dark:text-grey font-OnestRegular;
+
+                    .link {
+                        @apply ml-1 focus:underline text-primary-dark hover:text-primary-default hover:underline font-OnestRegular;
                     }
                 }
             }
