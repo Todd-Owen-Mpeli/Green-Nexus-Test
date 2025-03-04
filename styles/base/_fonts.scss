@@ -1,0 +1,59 @@
+/*===== FONTS =====*/
+// SchaboCondensed
+@font-face {
+	font-family: schaboCondensed;
+	src: url("../fonts/schabo-condensed.woff");
+}
+
+// BGAPBold
+@font-face {
+	font-family: BGAPBold;
+	src: url("../fonts/BasisGrotesqueArabicPro-Bold.woff");
+}
+@font-face {
+	font-family: BGAPBlack;
+	src: url("../fonts/BasisGrotesqueArabicPro-Black.woff");
+}
+@font-face {
+	font-family: BGAPLight;
+	src: url("../fonts/BasisGrotesqueArabicPro-Light.woff");
+}
+@font-face {
+	font-family: BGAPMedium;
+	src: url("../fonts/BasisGrotesqueArabicPro-Medium.woff");
+}
+@font-face {
+	font-family: BGAPRegular;
+	src: url("../fonts/BasisGrotesqueArabicPro-Regular.woff");
+}
+
+// Onest
+@font-face {
+	font-family: OnestBlack;
+	src: url("../fonts/OnestBlack.woff");
+}
+@font-face {
+	font-family: OnestBold;
+	src: url("../fonts/OnestBold.woff");
+}
+@font-face {
+	font-family: OnestRegular;
+	src: url("../fonts/OnestRegular.woff");
+}
+
+// Font Stack Properties
+
+// SchaboCondensed
+$schaboCondensed: "schaboCondensed" !default;
+
+// BGAPBold
+$BGAPBold: "BGAPBold" !default;
+$BGAPBlack: "BGAPBlack" !default;
+$BGAPLight: "BGAPLight" !default;
+$BGAPMedium: "BGAPMedium" !default;
+$BGAPRegular: "BGAPRegular" !default;
+
+// Onest
+$OnestBold: "OnestBold" !default;
+$OnestBlack: "OnestBlack" !default;
+$OnestRegular: "OnestRegular" !default;
