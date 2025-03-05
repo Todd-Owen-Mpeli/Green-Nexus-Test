@@ -167,6 +167,97 @@
         .main {
             @apply flex flex-col;
 
+            .createItem {
+                .divider {
+                    @apply fixed top-0 left-0 z-50 w-full h-full bg-primary-dark bg-opacity-90;
+                }
+
+                .mainContent {
+                    @apply fixed top-0 left-0 z-50 flex w-full h-full px-4 py-24 overflow-y-scroll;
+
+                    .wrapper {
+                        @apply relative m-auto bg-white rounded-lg;
+
+                        .button {
+                            @apply absolute right-0 w-8 cursor-pointer text-brightGreen -top-12 hover:text-yellow;
+
+                            .image {
+                                @apply transition-opacity duration-200 ease-in-out hover:opacity-70;
+                            }
+                        }
+
+                        .popupContent {
+                            @apply px-4 overflow-hidden lg:px-0;
+
+                            .popupWrapper {
+                                @apply pl-5 relative;
+
+                                .createItem {
+                                    @apply w-full p-8 max-w-xl;
+
+                                    .form {
+                                        @apply w-full max-w-[1700px] mx-auto transition-all ease-in-out duration-[0.5s] md:max-w-5xl;
+
+                                        .titleSection {
+                                            @apply flex items-center justify-center my-4 mb-8 gap-x-2;
+
+                                            .pending {
+                                                @apply text-xl font-semibold font-OnestBold text-center uppercase text-primary-default;
+                                            }
+
+                                            .created {
+                                                @apply text-xl font-semibold font-OnestBold text-center uppercase text-secondary-default;
+                                            }
+
+                                            .error {
+                                                @apply text-xl font-semibold font-OnestBold text-center uppercase text-primary-dark;
+                                            }
+                                        }
+
+                                        .title {
+                                            @apply mb-8 text-xl font-semibold text-center text-primary-dark font-OnestBold;
+                                        }
+
+                                        .formFieldsSection {
+                                            @apply flex flex-col flex-wrap gap-4;
+
+                                            .fieldsSection {
+                                                @apply mb-6 flex flex-col items-center justify-center lg:items-start gap-y-8;
+
+                                                label {
+                                                    @apply text-base font-thin font-OnestRegular text-primary-dark;
+                                                }
+
+                                                input,
+                                                textarea {
+                                                    @apply px-4 py-2 text-tiny font-thin font-OnestRegular w-full lg:w-fit lg:min-w-[13rem] text-primary-dark bg-white bg-opacity-50 outline-none rounded-lg border-[1px] border-darkGrey active:border-primary-dark focus:border-primary-dark focus:ring-[1px] focus:ring-primary-dark;
+                                                }
+
+                                                textarea {
+                                                    @apply w-full;
+                                                }
+                                            }
+
+                                            .button {
+                                                @apply relative flex items-center justify-center w-full mt-6 px-4 py-2 space-x-4 overflow-hidden text-white transition duration-200 bg-center bg-no-repeat bg-cover rounded-md disabled:bg-opacity-20 disabled:cursor-not-allowed border-primary-dark focus:ring-2 focus:ring-offset-1 hover:text-white hover:border-white focus:ring-white;
+
+                                                .div {
+                                                    @apply absolute top-0 w-full h-full transition duration-200 transform bg-center bg-no-repeat bg-cover bg-primary-dark right-full;
+                                                }
+
+                                                .span {
+                                                    @apply relative text-base font-OnestBold;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
             .tables {
                 @apply hidden lg:block w-full h-full p-6 border-primary-dark border-2 overflow-hidden shadow-2xl bg-white rounded-2xl;
 
@@ -330,5 +421,18 @@
                 }
             }
         }
+    }
+}
+
+/* SVG animations */
+@keyframes submit_button_color_anim {
+    0% {
+        fill: #ffffff;
+    }
+    50% {
+        fill: #2563eb;
+    }
+    100% {
+        fill: #ffffff;
     }
 }

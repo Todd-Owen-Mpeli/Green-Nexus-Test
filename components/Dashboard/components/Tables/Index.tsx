@@ -18,7 +18,7 @@ const Tables: FC = () => {
 				viewport={{once: true}}
 				className={styles.title}
 			>
-				Created Items
+				Created Tasks
             </motion.h3>
             <div className={styles.tableContainer}>
                 <table className={styles.tableGrid}>
