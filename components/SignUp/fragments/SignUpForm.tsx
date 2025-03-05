@@ -325,7 +325,7 @@ const SignUpForm: FC = () => {
 						<div
 							className={styles.div + " group-hover:translate-x-full group-hover:scale-102"}
 							style={{
-								backgroundImage: `url("/svg/stacked-waves-haikei-orange-secondary-default.svg")`,
+								backgroundImage: `url("/svg/stacked-waves-haikei-orange-yellow.svg")`,
 							}}
 						/>
 						<span className={styles.span}>Sign up</span>
