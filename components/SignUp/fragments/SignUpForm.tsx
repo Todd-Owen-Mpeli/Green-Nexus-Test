@@ -319,7 +319,7 @@ const SignUpForm: FC = () => {
 						}
 						className={styles.button + " group"}
 						style={{
-							backgroundImage: `url("/svg/stacked-waves-haikei-blue-primary-dark.svg")`,
+							backgroundImage: `url("/svg/stacked-waves-haikei-blue-darkblue.svg")`,
 						}}
 					>
 						<div
