@@ -12,7 +12,7 @@ import styles from "@/components/Login/styles/Login.module.scss";
 // Components
 import FormIntro from "@/components/Login/fragments/FormIntro";
 import SignInAuth from "@/components/Login/fragments/SignInAuth";
-// import LoginForm from "@/components/Login/fragments/LoginForm";
+import LoginForm from "@/components/Login/fragments/LoginForm";
 import SignInDivider from "@/components/Login/fragments/SignInDivider";
 
 const Login: FC<ILogin.IProps> = ({title, paragraph}) => {
@@ -33,7 +33,7 @@ const Login: FC<ILogin.IProps> = ({title, paragraph}) => {
                     <FormIntro title={title} paragraph={paragraph} />
                     <SignInAuth />
                     <SignInDivider />
-					{/* <LoginForm /> */}
+					<LoginForm />
                     <motion.div
 						initial={initial}
 						viewport={{once: true}}

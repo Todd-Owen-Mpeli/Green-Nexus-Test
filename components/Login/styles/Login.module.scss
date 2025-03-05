@@ -89,26 +89,6 @@
                 .content {
                     @apply space-y-4;
 
-                    .firstNameField {
-                        @apply space-y-2;
-
-                        .div {
-                            @apply flex items-center justify-start gap-2;
-
-                            .label {
-                                @apply block text-tiny text-primary-dark font-OnestBold;
-                            }
-
-                            .error {
-                                @apply py-0 text-sm font-semibold text-left text-pinkRed;
-                            }
-                        }
-
-                        .field {
-                            @apply w-full px-3 py-2 border-[1px] rounded-md border-grey text-primary-dark focus:border-primary-dark font-OnestRegular;
-                        }
-                    }
-
                     .emailAddressField {
                         @apply space-y-2;
 

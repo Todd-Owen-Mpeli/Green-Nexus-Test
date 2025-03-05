@@ -15,9 +15,9 @@ import {signInUserWithEmailAndPassword} from "@/firebase/backend/signInWithEmail
 import {createNewUserWithEmailAndPassword} from "@/firebase/backend/createNewUserWithEmailAndPassword";
 
 // Styling
-import styles from "@/components/SignUp/styles/SignUp.module.scss";
+import styles from "@/components/Login/styles/Login.module.scss";
 
-const SignUpForm: FC = () => {
+const LoginForm: FC = () => {
 	const auth = getAuth();
 	const router: any = useRouter();
 
@@ -31,11 +31,6 @@ const SignUpForm: FC = () => {
 	// which keys are symmetrical to our values/initialValues
 	const validate: any = (values: any) => {
 		const errors: any = {};
-		if (!values?.fullName) {
-			errors.fullName = "Required*";
-		} else if (values?.fullName.length >= 16) {
-			errors.fullName = "Must be 15 characters or less";
-		}
 
 		if (!values?.email) {
 			errors.email = "Required*";
@@ -69,16 +64,11 @@ const SignUpForm: FC = () => {
 	And Initial Values */
 	const formik: any = useFormik({
 		initialValues: {
-			fullName: "",
 			email: "",
 			password: "",
 		},
 		validate,
-		onSubmit: async (values: {
-			fullName: string;
-			email: string;
-			password: string;
-		}) => {
+		onSubmit: async (values: any) => {
 			if (reCaptchaResult) {
 				try {
 					const signInStatus = await signInUserWithEmailAndPassword(
@@ -96,19 +86,19 @@ const SignUpForm: FC = () => {
 							console.log(`Created new user ${values?.fullName}`);
 							createNewUserWithEmailAndPassword(auth, values);
 							setTimeout(() => {
-								router.push(`/payment`)?.catch(console.error);
+								router.push(`/payment`).catch(console.error);
 							}, 1000);
 						} else if (signInStatus.userDisabled) {
 							setErrorMessage(true);
 						} else {
 							// Send user to the dashboard
-							router.push(`/dashboard`)?.catch(console.error);
+							router.push(`/dashboard`).catch(console.error);
 						}
 					}
 				} catch (error) {
 					setErrorMessage(true);
 					throw new Error(
-						`Error Message: Sorry ${values?.fullName} Something went wrong creating your account. Please try again.`
+						`Error Message: Something went wrong signing you in. Please try again.`
 					);
 				}
 			} else {
@@ -118,6 +108,7 @@ const SignUpForm: FC = () => {
 			}
 		},
 	});
+
 	// Form Submission
 	const onFormSubmit = (event: any) => {
 		event.preventDefault();
@@ -140,7 +131,7 @@ const SignUpForm: FC = () => {
 	};
 
 	return (
-		<div className={styles.signUpForm}>
+		<div className={styles.loginForm}>
 			<Formik  onSubmit={formik?.onSubmit} initialValues={formik?.initialValues}>
 				<Form>
 					<motion.div
@@ -150,37 +141,6 @@ const SignUpForm: FC = () => {
 						whileInView="animate"
 						className={styles.content}
 					>
-						{/* First Name */}
-						<motion.div
-							initial={initial}
-							whileInView={fadeInUp}
-							viewport={{once: true}}
-							className={styles.firstNameField}
-						>
-							<div className={styles.div}>
-								<label
-									htmlFor="First Name"
-									className={styles.label}
-								>
-									First Name
-								</label>
-								{formik?.touched?.fullName && formik?.errors?.fullName ? (
-									<span className={styles.error}>
-										{formik?.errors?.fullName}
-									</span>
-								) : null}
-							</div>
-							<Field
-								type="text"
-								id="fullName"
-								name="fullName"
-								className={styles.field}
-								onBlur={formik?.handleBlur}
-								placeholder="Olivia Anderson"
-								onChange={formik?.handleChange}
-								value={formik?.values?.fullName}
-							/>
-						</motion.div>
 						{/* Email address */}
 						<motion.div
 							initial={initial}
@@ -289,9 +249,8 @@ const SignUpForm: FC = () => {
 							whileInView={fadeInUp}
 							viewport={{once: true}}
 							className={
-								formik?.touched?.firstName ||
-								formik?.touched?.password ||
-								formik?.touched?.email
+								formik?.touched?.email ||
+								formik?.touched?.password
 									? "block"
 									: "hidden"
 							}
@@ -309,9 +268,8 @@ const SignUpForm: FC = () => {
 						whileInView={fadeInUp}
 						onClick={onFormSubmit}
 						viewport={{once: true}}
-						aria-label="Sign Up with Form"
+						aria-label="Login Form"
 						disabled={
-							!formik?.values?.fullName ||
 							!formik?.values?.email ||
 							!formik?.values?.password ||
 							reCaptchaResult === null ||
@@ -328,7 +286,7 @@ const SignUpForm: FC = () => {
 								backgroundImage: `url("/svg/backgroundSVG/stacked-waves-haikei-orange-yellow.svg")`,
 							}}
 						/>
-						<span className={styles.span}>Sign up</span>
+						<span className={styles.span}>Login</span>
 					</motion.button>
 				</Form>
 			</Formik>
@@ -336,4 +294,4 @@ const SignUpForm: FC = () => {
 	);
 };
 
-export default SignUpForm;
+export default LoginForm;
