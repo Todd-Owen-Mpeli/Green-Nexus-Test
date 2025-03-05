@@ -1,3 +1,4 @@
+// Imports
 import type { Config } from "tailwindcss";
 import {PluginAPI, CSSRuleObject} from "tailwindcss/types/config";
 

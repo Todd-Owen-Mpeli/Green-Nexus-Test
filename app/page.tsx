@@ -13,10 +13,10 @@ export const metadata: Metadata = {
 const HomePage: any = async () => {
 
 return (
-  <SignUp
-        title={`Sign Up today`}
-        paragraph={`We kindly request you to enter your details.`}
-      />
+    <SignUp
+      title={`Sign Up today`}
+      paragraph={`We kindly request you to enter your details.`}
+    />
 	);
 };
   export default HomePage;

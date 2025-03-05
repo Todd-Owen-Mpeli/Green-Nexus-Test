@@ -5,19 +5,16 @@ import type {AppProps} from "next/app";
 import "@/styles/globals.scss";
 
 // Context Providers
-import FirebaseUserProvider from "@/context/providers/FirebaseContextProvider";
+import FirebaseUserProvider from "@/firebase/context/providers/FirebaseContextProvider";
 
 // Components
 import SmoothScrolling from "@/components/Global/SmoothScrolling";
 import BlurryCursorMouse from "@/components/BlurryCursorMouse/Index";
 
-
 const App = async ({children}: AppProps | any) => {
-
-  
   return (
     <html lang="en">
-      <body >
+      <body>
         <SmoothScrolling>
           <FirebaseUserProvider>
             {children}
