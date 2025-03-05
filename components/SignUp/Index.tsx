@@ -1,5 +1,6 @@
 "use client";
 
+// Imports
 import {FC} from "react";
 import Link from "next/link";
 import {motion} from "framer-motion";
@@ -19,7 +20,7 @@ const SignUp: FC<ISignUp.IProps> = ({title, paragraph}) => {
     return (
         <section className={styles.signUp}
             style={{
-				backgroundImage: `url("/svg/backgroundSVG/stacked-waves-haikei-orange-yellow.svg")`,
+				backgroundImage: `url("/svg/backgroundSVG/stacked-waves-haikei-orange-secondary-default.svg")`,
 			}}
 		>
             <div className={styles.container}>

@@ -18,13 +18,6 @@ const TopNavbar: FC = () => {
 	const router = useRouter();
 	const dashboardLayoutContext = useDashboardLayoutContext();
 	const [revealCreateItem, setRevealCreateItem] = useState(false);
-	const [revealGoogleTranslateOptions, setRevealGoogleTranslateOptions] =
-		useState(false);
-
-	// Hides or Displays Google Translate Options
-	const handleRevealGoogleTranslateOptions = () => {
-		setRevealGoogleTranslateOptions(!revealGoogleTranslateOptions);
-	};
 
 	// Handles User Logout
 	const handleLogout = () => {
@@ -56,51 +49,51 @@ const TopNavbar: FC = () => {
 				>
 					<button onClick={dashboardLayoutContext?.handleRevealUserCreateItemModal}>
 						<svg
-								width="26"
-								height="26"
-								fill="#09275e"
-								viewBox="0 0 24 24"
-								className={`w-[26px] h-[26px] mb-[-6px] ${
-									revealCreateItem ? "rotate-45" : "rotate-0"
-								} transition-all duration-200 ease-in-out`}
-								xmlns="http://www.w3.org/2000/svg"
-							>
-								<g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-								<g
-									id="SVGRepo_tracerCarrier"
-									strokeLinecap="round"
-									strokeLinejoin="round"
-								></g>
-								<g id="SVGRepo_iconCarrier">
-									<g id="Complete">
-										<g data-name="add" id="add-2">
-											<g>
-												<line
-													fill="09275e"
-													stroke="#09275e"
-													strokeLinecap="round"
-													strokeLinejoin="round"
-													strokeWidth="2"
-													x1="12"
-													x2="12"
-													y1="19"
-													y2="5"
-												></line>
-												<line
-													fill="09275e"
-													stroke="#09275e"
-													strokeLinecap="round"
-													strokeLinejoin="round"
-													strokeWidth="2"
-													x1="5"
-													x2="19"
-													y1="12"
-													y2="12"
-												></line>
-											</g>
+							width="26"
+							height="26"
+							fill="#09275e"
+							viewBox="0 0 24 24"
+							className={`w-[20px] h-[20px] mb-[-4px] ${
+								revealCreateItem ? "rotate-45" : "rotate-0"
+							} transition-all duration-200 ease-in-out`}
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+							<g
+								id="SVGRepo_tracerCarrier"
+								strokeLinecap="round"
+								strokeLinejoin="round"
+							></g>
+							<g id="SVGRepo_iconCarrier">
+								<g id="Complete">
+									<g data-name="add" id="add-2">
+										<g>
+											<line
+												fill="09275e"
+												stroke="#09275e"
+												strokeLinecap="round"
+												strokeLinejoin="round"
+												strokeWidth="2"
+												x1="12"
+												x2="12"
+												y1="19"
+												y2="5"
+											></line>
+											<line
+												fill="09275e"
+												stroke="#09275e"
+												strokeLinecap="round"
+												strokeLinejoin="round"
+												strokeWidth="2"
+												x1="5"
+												x2="19"
+												y1="12"
+												y2="12"
+											></line>
 										</g>
 									</g>
 								</g>
+							</g>
 						</svg>
 					</button>
                 </motion.li>
@@ -115,7 +108,7 @@ const TopNavbar: FC = () => {
 							height="20"
 							fill="#09275e"
 							viewBox="0 0 20 20"
-							className="w-[26px] h-[26px]"
+							className="w-[20px] h-[20px]"
 							xmlns="http://www.w3.org/2000/svg"
 						>
 							<path
@@ -123,71 +116,6 @@ const TopNavbar: FC = () => {
 								fill="currentColor"
 							></path>
 						</svg>
-					</Link>
-                </motion.li>
-                <motion.li
-					initial={initialTwo}
-					whileInView={fadeIn}
-					viewport={{once: true}}
-				>
-					<Link href="#">
-							<svg
-								width="26"
-								height="26"
-								fill="#f6ad37"
-								viewBox="0 0 24 24"
-								xmlns="http://www.w3.org/2000/svg"
-								className="opacity-100 cursor-pointer hover:opacity-60"
-							>
-								<g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-								<g
-									id="SVGRepo_tracerCarrier"
-									strokeLinecap="round"
-									strokeLinejoin="round"
-								></g>
-								<g id="SVGRepo_iconCarrier">
-									<g id="Complete">
-										<g id="alert-circle">
-											<g>
-												<line
-													fill="none"
-													stroke="#f6ad37"
-													strokeLinecap="round"
-													strokeLinejoin="round"
-													strokeWidth="2"
-													x1="12"
-													x2="12"
-													y1="8"
-													y2="12"
-												></line>
-												<line
-													fill="none"
-													stroke="#f6ad37"
-													strokeLinecap="round"
-													strokeLinejoin="round"
-													strokeWidth="2"
-													x1="12"
-													x2="12"
-													y1="16"
-													y2="16"
-												></line>
-												<circle
-													cx="12"
-													cy="12"
-													data-name="--Circle"
-													fill="none"
-													id="_--Circle"
-													r="10"
-													stroke="#f6ad37"
-													strokeLinecap="round"
-													strokeLinejoin="round"
-													strokeWidth="2"
-												></circle>
-											</g>
-										</g>
-									</g>
-								</g>
-							</svg>
 					</Link>
                 </motion.li>
                 <motion.li

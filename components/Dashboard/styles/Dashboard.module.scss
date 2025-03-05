@@ -2,51 +2,139 @@
     @apply min-h-screen w-full h-full bg-pureBlack flex;
 
     .navigation {
-        @apply w-1/6 px-4 py-3 xl:py-5 bg-cover bg-no-repeat bg-center overflow-x-hidden overflow-y-auto;
+        @apply w-1/6 px-4 py-2 bg-cover bg-no-repeat bg-center overflow-x-hidden overflow-y-auto;
 
-        .navLinks {
-            li {
-                @apply cursor-pointer rounded-sm py-2;
+        .container {
+            @apply flex flex-col justify-between h-full gap-4 lg:gap-12;
 
-                span {
-                    @apply text-tiny;
+            .titleSection {
+                @apply pb-3 border-b-[1px] relative lg:static border-secondary-default;
+
+                .title {
+                    @apply hidden text-base tracking-tight text-white uppercase transition-all duration-500 ease-in-out xl:block hover:text-secondary-default font-OnestBold;
                 }
             }
 
-            li:hover {
-                @apply transition-all duration-200 ease-in-out;
+            .navLinks {
+                @apply flex flex-col px-2 py-3 gap-3 mx-auto mt-4 lg:mx-0;
 
-                svg {
-                    @apply text-secondary-default transition-all ease-in-out duration-200;
+                li {
+                    @apply cursor-pointer rounded-sm py-2;
+
+                    span {
+                        @apply text-tiny;
+                    }
+                }
+
+                li:hover {
+                    @apply transition-all duration-200 ease-in-out;
+
+                    svg {
+                        @apply text-secondary-default transition-all ease-in-out duration-200;
+                    }
+                }
+
+                .linkOne {
+                    @apply flex items-center justify-center gap-4 lg:justify-start;
+
+                    .svg {
+                        @apply w-[15px] h-[15px] text-white hover:text-secondary-default transition-all ease-in-out duration-200;
+                    }
+
+                    .text {
+                        @apply hidden text-white lg:block;
+                    }
+                }
+
+                .linkTwo {
+                    @apply flex items-center justify-center gap-4 lg:justify-start;
+
+                    .svg {
+                        @apply w-[19px] h-[19px] text-white hover:text-secondary-default transition-all ease-in-out duration-200;
+                    }
+
+                    .text {
+                        @apply hidden text-white lg:block;
+                    }
                 }
             }
 
-            .mediaSVG:hover {
-                fill: none;
+            .avatarButton {
+                .image {
+                    @apply object-cover object-center min-w-10 min-h-10 w-10 h-10 transition-all duration-200 ease-in-out rounded-full cursor-pointer ring-[3px] ring-primary-default;
+                }
+            }
 
-                path {
-                    fill: none;
+            .avatarContent {
+                @apply flex-col items-center justify-center hidden px-0 lg:flex;
+
+                .signOutModalSection {
+                    @apply block mt-4 2xl:mt-0;
+                }
+
+                .content {
+                    @apply mt-4 2xl:mt-0 flex gap-1 flex-col;
+
+                    .displayName {
+                        @apply font-bold text-center text-white text-tiny lg:text-left font-OnestRegular;
+                    }
+
+                    .email {
+                        @apply hidden text-xs text-center text-white xl:block 2xl:text-left font-OnestRegular;
+                    }
+                }
+            }
+
+            .signOutModalSection {
+                @apply block px-4 lg:hidden;
+
+                .signOutModal {
+                    @apply flex flex-col items-center justify-between gap-6 lg:flex-row;
+
+                    .buttonOne {
+                        @apply text-white transition-all duration-200 ease-in-out rotate-180 rounded hover:opacity-60;
+
+                        .svg {
+                            @apply w-[18px] h-[18px] lg:w-[20px] lg:h-[20px] text-white;
+                        }
+                    }
+
+                    .buttonTwo {
+                        @apply text-white transition-all duration-200 ease-in-out rounded hover:opacity-60;
+
+                        .svg {
+                            @apply w-[20px] h-[20px] lg:w-[24px] lg:h-[24px] text-white;
+                        }
+                    }
+
+                    .buttonThree {
+                        @apply text-white transition-all duration-200 ease-in-out rounded hover:opacity-60;
+
+                        .svg {
+                            @apply w-[20px] h-[20px] lg:w-[24px] lg:h-[24px] mt-0 lg:mt-[3px] text-white;
+                        }
+                    }
                 }
             }
         }
     }
 
-    .container {
+    .mainContainer {
         @apply flex flex-col w-full bg-white;
 
         .topNavbar {
-            @apply flex flex-row flex-wrap items-center justify-between px-4 py-2 border-b-[1px] border-[#e8e8e8];
+            @apply flex flex-row flex-wrap items-center justify-between px-4 py-1 border-b-[1px] border-[#e8e8e8];
 
             .titleSection {
                 @apply flex flex-row items-center;
 
                 .title {
-                    @apply text-base font-bold text-left cursor-default lg:text-medium font-OnestBold;
+                    @apply text-sm text-left cursor-default lg:text-base font-OnestRegular;
                 }
             }
 
             .ul {
-                @apply flex flex-row items-center gap-6;
+                @apply flex flex-row items-center gap-4;
 
                 li {
                     @apply cursor-pointer px-0;
@@ -57,7 +145,7 @@
                         @apply py-2;
 
                         .svg {
-                            @apply w-[26px] h-[26px] mt-[3px];
+                            @apply w-[20px] h-[20px] mt-[3px];
 
                             svg:hover {
                                 @apply fill-pinkRed;

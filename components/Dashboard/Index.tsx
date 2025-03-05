@@ -16,9 +16,10 @@ const Dashboard: FC<IDashboard.IProps> = () => {
     return (
         <section className={styles.dashboard}>
             <Navigation />
-            <div className={styles.container}>
+            <div className={styles.mainContainer}>
                 <TopNavbar />
-                <div className={styles.main}></div>
+                <div className={styles.main}>
+                </div>
             </div>
         </section>
     );
