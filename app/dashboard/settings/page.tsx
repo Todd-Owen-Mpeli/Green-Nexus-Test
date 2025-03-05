@@ -1,15 +1,16 @@
+
 // Imports
 import type { Metadata } from "next";
 
 // Components
-import Dashboard from "@/components/Dashboard/Index";
 import Layout from "@/components/Dashboard/layout/Layout";
 import DashboardContextProvider from "@/context/providers/DashboardContextProvider";
+import PersonalInformation from "@/components/Dashboard/components/PersonalInformation";
 
 // Dynamic Pages Generated Metadata
 export const metadata: Metadata = {
-  title: "Dashboard",
-  description: "Dashboard page",
+  title: "Settings",
+  description: "Settings page",
 };
 
 const DashboardPage: any = async () => {
@@ -17,7 +18,8 @@ const DashboardPage: any = async () => {
 	return (
 		<DashboardContextProvider>
 			<Layout>
-				<Dashboard />
+				<PersonalInformation />
+				<></>
 			</Layout>
 		</DashboardContextProvider>
 		

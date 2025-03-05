@@ -165,7 +165,7 @@
         }
 
         .main {
-            @apply flex flex-col p-4 lg:p-4;
+            @apply flex flex-col;
 
             .tables {
                 @apply hidden lg:block w-full h-full p-6 border-primary-dark border-2 overflow-hidden shadow-2xl bg-white rounded-2xl;
@@ -234,7 +234,7 @@
                                     }
 
                                     .description {
-                                        @apply lg:min-w-[20rem] text-sm max-w-sm font-normal text-left font-OnestRegular;
+                                        @apply lg:min-w-[15rem] text-sm max-w-sm font-normal text-left font-OnestRegular;
                                     }
 
                                     .quantity {
@@ -291,6 +291,42 @@
 
                         .loading {
                             @apply relative flex flex-col items-center justify-center;
+                        }
+                    }
+                }
+            }
+
+            .personalInformation {
+                @apply flex flex-col p-0;
+
+                .backgroundImage {
+                    @apply object-cover object-center w-full h-full min-h-[175px] max-h-[175px] lg:min-h-[250px] lg:max-h-[250px];
+                }
+
+                .main {
+                    @apply flex flex-col gap-4 px-0 py-10 lg:flex-row;
+
+                    .content {
+                        @apply flex flex-col w-full max-w-5xl gap-4 px-8 py-10 mx-auto bg-white rounded-2xl;
+
+                        .item {
+                            @apply flex flex-col py-2 items-center justify-between gap-2 sm:flex-row border-b-lightGreyTwo border-b-[1px];
+
+                            .title {
+                                @apply font-bold text-left text-medium text-primary-dark font-OnestRegular;
+                            }
+
+                            .value {
+                                @apply mt-1 text-base text-left text-black font-OnestRegular;
+                            }
+
+                            .photoURL {
+                                @apply object-cover object-center w-10 h-10 rounded-full;
+                            }
+
+                            .emailVerified {
+                                @apply px-2 py-1 text-xs text-white rounded-full font-OnestRegular;
+                            }
                         }
                     }
                 }

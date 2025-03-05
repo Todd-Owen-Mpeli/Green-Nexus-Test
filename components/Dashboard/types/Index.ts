@@ -5,4 +5,7 @@ export namespace IDashboard {
 		isOpen: boolean;
 		onClose: any;
 	};
+	export type ILayout = {
+		children: React.ReactNode;
+	};
 };

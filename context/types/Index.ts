@@ -1,5 +1,4 @@
 export namespace IDashboardContext {
-	
 	export type IGlobal = {
 		itemsCollection: any[] | null;
 		mediaFilesCollection: any[] | null;
