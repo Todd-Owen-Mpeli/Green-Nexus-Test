@@ -5,7 +5,7 @@ import {getFirestore, collection, getDocs} from "firebase/firestore";
 documents data from cloud firestore database */
 export const getUserItemsDocument = async (userDocID: string | null) => {
 	const db = getFirestore();
-	let itemsCollectionsArray: any[] = [];
+	const itemsCollectionsArray: any[] = [];
 
 	try {
 		const subCollectionRef = collection(db, `users/${userDocID}/Items`);

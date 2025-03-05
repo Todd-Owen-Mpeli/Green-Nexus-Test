@@ -5,7 +5,7 @@ import {getFirestore, collection, getDocs} from "firebase/firestore";
 documents data from cloud firestore database */
 export const getUserMediaFilesDocument = async (userDocID: string | null) => {
 	const db = getFirestore();
-	let mediaFilesCollectionsArray: any[] = [];
+	const mediaFilesCollectionsArray: any[] = [];
 
 	try {
 		const subCollectionRef = collection(db, `users/${userDocID}/Media`);

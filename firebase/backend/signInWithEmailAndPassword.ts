@@ -16,8 +16,8 @@ export const signInUserWithEmailAndPassword = async (
 	await signInWithEmailAndPassword(auth, values?.email, values?.password).catch(
 		(error) => {
 			// Handle Errors here.
-			var errorCode = error.code;
-			var errorMessage = error.message;
+			const errorCode: any = error.code;
+			const errorMessage: any = error.message;
 
 			if (errorCode === "auth/invalid-email") {
 				wrongEmail = true;
