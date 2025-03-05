@@ -20,7 +20,7 @@ const Login: FC<ILogin.IProps> = ({title, paragraph}) => {
     return (
         <section className={styles.login}
             style={{
-				backgroundImage: `url("/svg/backgroundSVG/stacked-waves-haikei-blue-darkblue.svg")`,
+				backgroundImage: `url("/svg/stacked-waves-haikei-blue-primary-dark.svg")`,
 			}}
 		>
             <div className={styles.container}>

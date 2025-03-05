@@ -277,13 +277,13 @@ const LoginForm: FC = () => {
 						}
 						className={styles.button + " group"}
 						style={{
-							backgroundImage: `url("/svg/backgroundSVG/stacked-waves-haikei-blue-darkblue.svg")`,
+							backgroundImage: `url("/svg/stacked-waves-haikei-blue-primary-dark.svg")`,
 						}}
 					>
 						<div
 							className={styles.div + " group-hover:translate-x-full group-hover:scale-102"}
 							style={{
-								backgroundImage: `url("/svg/backgroundSVG/stacked-waves-haikei-orange-secondary-default.svg")`,
+								backgroundImage: `url("/svg/stacked-waves-haikei-orange-secondary-default.svg")`,
 							}}
 						/>
 						<span className={styles.span}>Login</span>

@@ -28,7 +28,7 @@ const Navigation: FC = () => {
             style={{
 				backgroundImage: `linear-gradient(
 					0deg, rgba(9, 39, 94, 0),rgba(9, 39, 94, 0.65)
-				),url("/svg/backgroundSVG/stacked-waves-haikei-blue.svg")`,
+				),url("/svg/stacked-waves-haikei-blue.svg")`,
             }}
         >
             <div className={styles.container}>

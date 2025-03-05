@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import {useRouter} from "next/navigation";
 import {getAuth, signOut} from "firebase/auth";
 import {fadeIn, initialTwo} from "@/animations/animations";
-import { useDashboardLayoutContext } from "@/context/Dashboard";
+import { useDashboardContext } from "@/context/Dashboard";
 
 // Styling
 import styles from "@/components/Dashboard/styles/Dashboard.module.scss";
@@ -16,7 +16,7 @@ const TopNavbar: FC = () => {
 
     const auth = getAuth();
 	const router = useRouter();
-	const dashboardLayoutContext = useDashboardLayoutContext();
+	const dashboardLayoutContext = useDashboardContext();
 	const [revealCreateItem, setRevealCreateItem] = useState(false);
 
 	// Handles User Logout

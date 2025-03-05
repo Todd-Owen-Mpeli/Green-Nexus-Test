@@ -76,11 +76,11 @@
                     @apply mt-4 2xl:mt-0 flex gap-1 flex-col;
 
                     .displayName {
-                        @apply font-bold text-center text-white text-tiny lg:text-left font-OnestRegular;
+                        @apply font-bold text-center text-white text-[0.65rem] lg:text-left font-OnestRegular;
                     }
 
                     .email {
-                        @apply hidden text-xs text-center text-white xl:block 2xl:text-left font-OnestRegular;
+                        @apply hidden text-[0.65rem] text-center text-white xl:block 2xl:text-left font-OnestRegular;
                     }
                 }
             }
@@ -165,7 +165,136 @@
         }
 
         .main {
-            @apply flex flex-col p-0;
+            @apply flex flex-col p-4 lg:p-4;
+
+            .tables {
+                @apply hidden lg:block w-full h-full p-6 border-primary-dark border-2 overflow-hidden shadow-2xl bg-white rounded-2xl;
+
+                .title {
+                    @apply pb-8 text-lg font-semibold text-primary-dark font-OnestRegular;
+                }
+
+                .tableContainer {
+                    @apply text-lg font-semibold text-primary-dark;
+
+                    .tableGrid {
+                        @apply w-full flex flex-col text-lg font-semibold text-primary-dark;
+
+                        .thead {
+                            @apply pb-5 border-b border-black w-full flex items-center text-left text-black;
+
+                            .th {
+                                @apply w-full;
+
+                                .span {
+                                    @apply mx-1.5 font-thin text-base text-right capitalize font-OnestRegular;
+                                }
+                            }
+                        }
+
+                        .tbody {
+                            @apply flex flex-col;
+
+                            .wrapper {
+                                @apply flex items-center justify-between p-4 bg-white odd:bg-lightGrey;
+
+                                .td {
+                                    @apply w-full p-0;
+
+                                    .photoURLItemNameCategory {
+                                        @apply lg:min-w-[20rem] flex flex-col flex-wrap items-start;
+
+                                        .innerContent {
+                                            @apply flex flex-row items-center justify-start gap-2;
+
+                                            .top {
+                                                @apply flex flex-row items-center justify-start gap-6;
+
+                                                .startIndex {
+                                                    @apply font-semibold text-sm text-primary-dark font-OnestRegular;
+                                                }
+
+                                                .photoURL {
+                                                    @apply object-cover object-center mr-3 rounded-full w-9 h-9;
+                                                }
+                                            }
+
+                                            .bottom {
+                                                @apply flex flex-col;
+
+                                                .itemName {
+                                                    @apply font-semibold text-sm text-primary-dark font-OnestRegular;
+                                                }
+
+                                                .category {
+                                                    @apply font-normal text-xs text-darkGrey font-OnestRegular;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    .description {
+                                        @apply lg:min-w-[20rem] text-sm max-w-sm font-normal text-left font-OnestRegular;
+                                    }
+
+                                    .quantity {
+                                        @apply text-sm font-semibold text-left font-OnestRegular;
+                                    }
+
+                                    .value {
+                                        @apply px-2.5 py-1 text-sm font-normal text-left font-OnestRegular text-white bg-primary-dark w-fit rounded-full;
+                                    }
+
+                                    .editFields {
+                                        @apply flex flex-row gap-2;
+
+                                        .button {
+                                            @apply inline-flex py-2.5 pr-0;
+
+                                            .divs,
+                                            .divMiddle {
+                                                @apply w-1 h-1 bg-black rounded-full;
+                                            }
+
+                                            .divMiddle {
+                                                @apply mx-0.5;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .pagination {
+                                @apply flex flex-row items-center justify-between gap-4 mt-6;
+
+                                .paginationContainer {
+                                    @apply flex items-center justify-start gap-4;
+
+                                    .previous {
+                                        @apply px-4 py-2 text-sm font-OnestRegular transition-all duration-200 ease-in-out border cursor-pointer border-primary-dark hover:bg-secondary-dark hover:border-secondary-dark hover:text-white;
+                                    }
+
+                                    .text {
+                                        @apply px-4 py-2 text-sm font-OnestRegular text-white bg-primary-dark;
+                                    }
+
+                                    .next {
+                                        @apply px-4 py-2 text-sm font-OnestRegular transition-all duration-200 ease-in-out border cursor-pointer border-primary-dark hover:bg-secondary-dark hover:border-secondary-dark hover:text-white;
+                                    }
+                                }
+
+                                .totalItems {
+                                    @apply text-sm font-thin text-black font-OnestRegular;
+                                }
+                            }
+                        }
+
+                        .loading {
+                            @apply relative flex flex-col items-center justify-center;
+                        }
+                    }
+                }
+            }
         }
     }
 }
