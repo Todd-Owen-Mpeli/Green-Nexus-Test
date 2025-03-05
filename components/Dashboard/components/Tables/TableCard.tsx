@@ -90,16 +90,6 @@ const TableCard: FC = () => {
 									</div>
 							</td>
 							<td className={styles.td}>
-								<div className={styles.quantity}>
-									{editFields ? <></> : item?.quantity}
-								</div>
-							</td>
-							<td className={styles.td}>
-								<div className={styles.value}>
-									£{item?.value}
-								</div>
-							</td>
-							<td className={styles.td}>
 								<div className={styles.editFields}>
 									<button
 										onClick={handleEditFields}

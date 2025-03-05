@@ -25,27 +25,17 @@ const Tables: FC = () => {
                     <thead>
 						<tr className={styles.thead}>
 							<th className={styles.th}>
-                                <span className={styles.span}>
+                                <span className={styles.name}>
                                     Name
                                 </span>
 							</th>
 							<th className={styles.th}>
-								<span className={styles.span}>
+								<span className={styles.description}>
 									Description
 								</span>
 							</th>
 							<th className={styles.th}>
-								<span className={styles.span}>
-									Quantity
-								</span>
-							</th>
-							<th className={styles.th}>
-								<span className={styles.span}>
-									Value
-								</span>
-							</th>
-							<th className={styles.th}>
-                                <span className={styles.span}>
+                                <span className={styles.edit}>
                                     Edit
                                 </span>
 							</th>

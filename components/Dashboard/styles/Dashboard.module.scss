@@ -181,28 +181,34 @@
                         @apply w-full flex flex-col text-lg font-semibold text-primary-dark;
 
                         .thead {
-                            @apply pb-5 border-b border-black w-full flex items-center text-left text-black;
+                            @apply pb-5 border-b border-black w-full grid grid-cols-3 text-left text-black;
 
                             .th {
-                                @apply w-full;
+                                @apply w-full flex px-2;
 
-                                .span {
+                                .name,
+                                .edit,
+                                .description {
                                     @apply mx-1.5 font-thin text-base text-right capitalize font-OnestRegular;
+                                }
+
+                                .edit {
+                                    @apply w-full flex items-center justify-end;
                                 }
                             }
                         }
 
                         .tbody {
-                            @apply flex flex-col;
+                            @apply w-full flex flex-col;
 
                             .wrapper {
-                                @apply flex items-center justify-between p-4 bg-white odd:bg-lightGrey;
+                                @apply w-full grid grid-cols-3 items-center justify-between p-4 bg-white odd:bg-lightGrey;
 
                                 .td {
-                                    @apply w-full p-0;
+                                    @apply w-full flex p-0;
 
                                     .photoURLItemNameCategory {
-                                        @apply lg:min-w-[20rem] flex flex-col flex-wrap items-start;
+                                        @apply w-full flex flex-col flex-wrap items-start;
 
                                         .innerContent {
                                             @apply flex flex-row items-center justify-start gap-2;
@@ -237,16 +243,8 @@
                                         @apply lg:min-w-[15rem] text-sm max-w-sm font-normal text-left font-OnestRegular;
                                     }
 
-                                    .quantity {
-                                        @apply text-sm font-semibold text-left font-OnestRegular;
-                                    }
-
-                                    .value {
-                                        @apply px-2.5 py-1 text-sm font-normal text-left font-OnestRegular text-white bg-primary-dark w-fit rounded-full;
-                                    }
-
                                     .editFields {
-                                        @apply flex flex-row gap-2;
+                                        @apply w-full flex flex-row justify-end gap-2;
 
                                         .button {
                                             @apply inline-flex py-2.5 pr-0;
