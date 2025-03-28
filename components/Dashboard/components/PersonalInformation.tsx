@@ -17,7 +17,7 @@ const PersonalInformation: FC = () => {
 
 	// Ensure userData is not null before using it in JSX
 	if (!firebaseContext?.userData) {
-		return <div>Loading...</div>; // or some other loading indicator
+		return <div>Loading...</div>;
 	}
 
     return (
